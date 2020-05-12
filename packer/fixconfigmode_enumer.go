@@ -7,9 +7,9 @@ import (
 	"fmt"
 )
 
-const _FixConfigModeName = "StdoutInplaceDiff"
+const _FixConfigModeName = "StdoutInplaceDiffSimpleOutput"
 
-var _FixConfigModeIndex = [...]uint8{0, 6, 13, 17}
+var _FixConfigModeIndex = [...]uint8{0, 6, 13, 17, 29}
 
 func (i FixConfigMode) String() string {
 	if i < 0 || i >= FixConfigMode(len(_FixConfigModeIndex)-1) {
@@ -18,12 +18,13 @@ func (i FixConfigMode) String() string {
 	return _FixConfigModeName[_FixConfigModeIndex[i]:_FixConfigModeIndex[i+1]]
 }
 
-var _FixConfigModeValues = []FixConfigMode{0, 1, 2}
+var _FixConfigModeValues = []FixConfigMode{0, 1, 2, 3}
 
 var _FixConfigModeNameToValueMap = map[string]FixConfigMode{
 	_FixConfigModeName[0:6]:   0,
 	_FixConfigModeName[6:13]:  1,
 	_FixConfigModeName[13:17]: 2,
+	_FixConfigModeName[17:29]: 3,
 }
 
 // FixConfigModeString retrieves an enum value from the enum constants string name.
